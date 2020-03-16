@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: user
+      password: ${CONFIG_SERVICE_PASSWORD}
+      name: gateway
+  application:
+    name: gateway
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    user:
+      path: /user/**
+    article:
+      path: /article/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

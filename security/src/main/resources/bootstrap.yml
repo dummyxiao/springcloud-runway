@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: security
+      uri: http://localhost:8888
+      username: user
+      password: ${CONFIG_SERVICE_PASSWORD}
+  application:
+    name: security
+
+
